@@ -1,0 +1,139 @@
+<html>
+  <body>
+  <head>
+  <style>
+  #css
+  <%=@casillas_Desbloqueadas%>{
+    background:gray;
+    color: black;
+  }
+
+  </style>
+ 
+  </head>
+  <body>
+    <h1>JUGADOR: <%=@@namePlayer%></h1>
+    <form method="get" action="/reiniciar" >
+   <input type="submit" value="Reiniciar!">
+    </form>
+    
+
+    <table border="1"  WIDTH="500" HEIGHT="500" BGCOLOR="#000000 ">
+      <caption>Ejemplo de tabla</caption>
+      <tbody>
+      <tr>
+          <th BGCOLOR="#FFFFFF"> </th>
+          <th BGCOLOR="#FFFFFF">A</th>
+          <th BGCOLOR="#FFFFFF">B</th>
+          <th BGCOLOR="#FFFFFF">C</th>
+          <th BGCOLOR="#FFFFFF">D</th>
+          <th BGCOLOR="#FFFFFF">E</th>
+          <th BGCOLOR="#FFFFFF">F</th>
+          <th BGCOLOR="#FFFFFF">G</th>
+          <th BGCOLOR="#FFFFFF">H</th>
+        </tr>
+        <tr>
+          <th BGCOLOR="#FFFFFF">1</th>
+          <th><%=@casillas[0]%></th>
+          <th><%=@casillas[1]%></th>
+          <th><%=@casillas[2]%></th>
+          <th><%=@casillas[3]%></th>
+          <th><%=@casillas[4]%></th>
+          <th><%=@casillas[5]%></th>
+          <th><%=@casillas[6]%></th>
+          <th><%=@casillas[7]%></th>
+        </tr>
+        <tr>
+          <th BGCOLOR="#FFFFFF">2</th>
+          <th><%=@casillas[8]%></th>
+          <th><%=@casillas[9]%></th>
+          <th><%=@casillas[10]%></th>
+          <th><%=@casillas[11]%></th>
+          <th><%=@casillas[12]%></th>
+          <th><%=@casillas[13]%></th>
+          <th><%=@casillas[14]%></th>
+          <th><%=@casillas[15]%></th>
+        </tr>
+        <tr>
+          <th BGCOLOR="#FFFFFF">3</th>
+          <th><%=@casillas[16]%></th>
+          <th><%=@casillas[17]%></th>
+          <th><%=@casillas[18]%></th>
+          <th><%=@casillas[19]%></th>
+          <th><%=@casillas[20]%></th>
+          <th><%=@casillas[21]%></th>
+          <th><%=@casillas[22]%></th>
+          <th><%=@casillas[23]%></th>
+        </tr>
+        <tr>
+          <th BGCOLOR="#FFFFFF">4</th>
+          <th><%=@casillas[24]%></th>
+          <th><%=@casillas[25]%></th>
+          <th><%=@casillas[26]%></th>
+          <th><%=@casillas[27]%></th>
+          <th><%=@casillas[28]%></th>
+          <th><%=@casillas[29]%></th>
+          <th><%=@casillas[30]%></th>
+          <th><%=@casillas[31]%></th>  
+        </tr>
+        <tr>
+          <th BGCOLOR="#FFFFFF">5</th>
+          <th><%=@casillas[32]%></th>
+          <th><%=@casillas[33]%></th>
+          <th><%=@casillas[34]%></th>
+          <th><%=@casillas[35]%></th>
+          <th><%=@casillas[36]%></th>
+          <th><%=@casillas[37]%></th>
+          <th><%=@casillas[38]%></th>
+          <th><%=@casillas[39]%></th>
+        </tr>
+        <tr>
+          <th BGCOLOR="#FFFFFF">6</th>
+          <th><%=@casillas[40]%></th>
+          <th><%=@casillas[41]%></th>
+          <th><%=@casillas[42]%></th>
+          <th><%=@casillas[43]%></th>
+          <th><%=@casillas[44]%></th>
+          <th><%=@casillas[45]%></th>
+          <th><%=@casillas[46]%></th>
+          <th><%=@casillas[47]%></th>
+        </tr>
+        <tr>
+          <th BGCOLOR="#FFFFFF">7</th>
+          <th><%=@casillas[48]%></th>
+          <th><%=@casillas[49]%></th>
+          <th><%=@casillas[50]%></th>
+          <th><%=@casillas[51]%></th>
+          <th><%=@casillas[52]%></th>
+          <th><%=@casillas[53]%></th>
+          <th><%=@casillas[54]%></th>
+          <th><%=@casillas[55]%></th>
+      </tr>
+      <tr>
+        <th BGCOLOR="#FFFFFF">8</th>
+        <th><%=@casillas[56]%></th>
+        <th><%=@casillas[57]%></th>
+        <th><%=@casillas[58]%></th>
+        <th><%=@casillas[59]%></th>
+        <th><%=@casillas[60]%></th>
+        <th><%=@casillas[61]%></th>
+        <th><%=@casillas[62]%></th>
+        <th><%=@casillas[63]%></th>
+      </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+
+    <br>
+    <form method="get" action="/elegirCasillas" >
+    <input type="submit" value="Aceptar!">
+      <h4>X:</h4>  <input type="number" size="6" name="coord_x" id="coord_x">  
+
+      <h4>Y:</h4>  <input type="number" size="6" name="coord_y" id="coord_y" > 
+      <br>
+      <br> 
+        
+    </form>
+  </body>
+</html>
