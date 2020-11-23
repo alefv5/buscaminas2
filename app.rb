@@ -17,7 +17,7 @@ get '/elegirCasillas' do
     @@namePlayer=params[:namePlayer]
 
     coordX=params[:coord_x]
-    coordY=params[:coord_Y]
+    coordY=params[:coord_y]
     buscaminasTablero.verificarCasilla(coordX.to_i, coordY.to_i)
     @casillas=buscaminasTablero.getTablero()
     erb :tablero
