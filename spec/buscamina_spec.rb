@@ -29,7 +29,7 @@ RSpec.describe Buscamina do
      it 'debería mostrar tablero' do
         @juego = Buscamina.new
         @juego.inicializar()
-        expect(@juego.getTablero()).to eq([0, "*"," "," ","*",1," "," ",
+        expect(@juego.getTablero()).to eq([ " ", "*"," "," ","*",1," "," ",
                                             " ","*",2,1,1,1," "," ",
                                             3," ",2," "," "," "," "," ",
                                             "*","*",1," "," "," ",1,1,
@@ -38,14 +38,14 @@ RSpec.describe Buscamina do
                                             1,2,1,1,1,"*","*"," ",
                                             "*"," ","*"," ",1," "," ",1])
      end
-     it 'debería verificar la casilla sea diferente 0(oculta)' do
+     it 'debería verificar la casilla para el cambio de color ' do
         @juego = Buscamina.new
         @juego.inicializar()
-        expect(@juego.verificarCasilla(2,2)).to eq(true)
+        expect(@juego.verificarCasilla(2,2)).to eq(".c10")
      end
-     it 'debería verificar la casilla este abierta' do
+     it 'debería verificar la casilla para el cambio de color ' do
         @juego = Buscamina.new
         @juego.inicializar()
-        expect(@juego.verificarCasilla(1,1)).to eq(false)
+        expect(@juego.verificarCasilla(1,1)).to eq(".c1")
      end
 end
