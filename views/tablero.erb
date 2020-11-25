@@ -17,24 +17,25 @@
   </head>
   <body>
     <h1>JUGADOR: <%=@@namePlayer%></h1>
+   
     <form method="get" action="/reiniciar" >
    <input type="submit" value="Reiniciar!">
     </form>
     
-
-    <table border="1"  WIDTH="500" HEIGHT="500" BGCOLOR="#000000">
+<h1>Mostrar casilla:<%=@casillaDesbloqueada%></h1>
+    <table border="1"  WIDTH="500" HEIGHT="500" BGCOLOR="">
       <caption>Ejemplo de tabla</caption>
       <tbody>
       <tr>
           <th BGCOLOR="#FFFFFF"> </th>
-          <th BGCOLOR="#FFFFFF">A</th>
-          <th BGCOLOR="#FFFFFF">B</th>
-          <th BGCOLOR="#FFFFFF">C</th>
-          <th BGCOLOR="#FFFFFF">D</th>
-          <th BGCOLOR="#FFFFFF">E</th>
-          <th BGCOLOR="#FFFFFF">F</th>
-          <th BGCOLOR="#FFFFFF">G</th>
-          <th BGCOLOR="#FFFFFF">H</th>
+          <th BGCOLOR="#FFFFFF">1</th>
+          <th BGCOLOR="#FFFFFF">2</th>
+          <th BGCOLOR="#FFFFFF">3</th>
+          <th BGCOLOR="#FFFFFF">4</th>
+          <th BGCOLOR="#FFFFFF">5</th>
+          <th BGCOLOR="#FFFFFF">6</th>
+          <th BGCOLOR="#FFFFFF">7</th>
+          <th BGCOLOR="#FFFFFF">8</th>
         </tr>
         <tr>
           <th BGCOLOR="#FFFFFF">1</th>
@@ -43,7 +44,7 @@
           <th class="c3"><%=@casillas[2]%></th>
           <th class="c4"><%=@casillas[3]%></th>
           <th class="c5"><%=@casillas[4]%></th>
-          <th class="c6" ><%=@casillas[5]%></th>
+          <th class="c6"><%=@casillas[5]%></th>
           <th class="c7"><%=@casillas[6]%></th>
           <th class="c8"><%=@casillas[7]%></th>
         </tr>
@@ -130,14 +131,15 @@
     <br>
 
     <br>
-    <form method="get" action="/elegirCasillas" >
-    <input type="submit" value="Aceptar!">
+    <form action="/elegirCasillas" >
+    
       <h4>X:</h4>  <input type="number" size="6" name="coord_x" id="coord_x">  
 
       <h4>Y:</h4>  <input type="number" size="6" name="coord_y" id="coord_y" > 
       <br>
       <br> 
-        
+        <input type="submit" value="MarcarCasilla!">
     </form>
+   MostrarTablero: <%=@tableroHTML%>
   </body>
 </html>
