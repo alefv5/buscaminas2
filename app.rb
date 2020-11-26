@@ -10,14 +10,14 @@ end
 get '/getNombre' do
 
     @@namePlayer=params[:namePlayer]
-    tamX=params[:tam_x]
-    tamY=params[:tam_y]
+    @@tamX=params[:tam_x]
+    @@tamY=params[:tam_y]
      @casillas=buscaminasTablero.getTablero()
-    # @tableroHTML=buscaminasTablero.generarHTML(tam_x,tam_y)
+     @tableroHTML=buscaminasTablero.generarHTML(@@tamX.to_i,@@tamY.to_i)
      erb :tablero
 end
 get '/elegirCasillas' do
-    @@namePlayer=params[:namePlayer]
+    #@@namePlayer=params[:namePlayer]
 
     coordX=params[:coord_x]
     coordY=params[:coord_y]
@@ -28,9 +28,10 @@ get '/elegirCasillas' do
 
 end
 get '/reiniciar' do
-    @@namePlayer=params[:namePlayer]
+    #@@namePlayer=params[:namePlayer]
     buscaminasTablero.inicializar()
     @casillas=buscaminasTablero.getTablero()
+    @tableroHTML=buscaminasTablero.generarHTML(@@tamX.to_i,@@tamY.to_i)
     erb :tablero
 end
 

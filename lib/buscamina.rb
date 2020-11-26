@@ -13,10 +13,26 @@ class Buscamina
                     "*"," ","*"," ","1"," "," ","1"] #array empieza en 1 y acaba en 64
                     @@casillasDesbloqueadas=".c"
     end
+    def generarHTML(x,y)
+        #@@tablero2 = Array.new @@filas*@@columnas
     
-    def generarHTML()
-        return "<table border=""1""><tr><th></th><th></th></tr></table>"
+        cadena_Html ="<table border=""1"" WIDTH=""500"" HEIGHT=""500"">"
+        cadena_HtmlFin="</table>"
+        for i in(1..y)
+            cadena_Html=cadena_Html+"<tr>"
+            for j in(1..x)
+                cadena_Html=cadena_Html+"<th>"
+                cadena_Html=cadena_Html+"</th>"
+            end
+            cadena_Html=cadena_Html+"</tr>"
+        end
+        
+       return cadena_Html=cadena_Html+cadena_HtmlFin
     end
+
+    #def generarHTML()
+     #   return "<table border=""1""><tr><th></th><th></th></tr></table>"
+    #end
     def getNombre()
         return @nombre
     end

@@ -48,11 +48,16 @@ RSpec.describe Buscamina do
         @juego.inicializar()
         expect(@juego.verificarCasilla(1,1)).to eq(".c1")
      end
-     it 'Deberia mostrar cadena de generarHTML' do
-        @juego = Buscamina.new
-        @juego.inicializar()
-        expect(@juego.generarHTML()).to eq("<table border=""1""><tr><th></th><th></th></tr></table>")
-     end
+     it 'deberia mostrar cadena de generarHTML para X=2 y Y=2' do
+      @juego = Buscamina.new
+      @juego.inicializar()
+      expect(@juego.generarHTML(2,2)).to eq("<table border=""1"" WIDTH=""500"" HEIGHT=""500""><tr><th></th><th></th></tr><tr><th></th><th></th></tr></table>")
+      end
+      it 'deberia mostrar cadena de generarHTML para X=4 y Y=2' do
+         @juego = Buscamina.new
+         @juego.inicializar()
+         expect(@juego.generarHTML(4,2)).to eq("<table border=""1"" WIDTH=""500"" HEIGHT=""500""><tr><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th></tr></table>")
+         end
      it 'Set tamaño array 5x5' do
          @juego = Buscamina.new
          @juego.setTamañoArray(5,5)

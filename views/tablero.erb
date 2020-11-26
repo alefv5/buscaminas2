@@ -21,112 +21,7 @@
     <form method="get" action="/reiniciar" >
    <input type="submit" value="Reiniciar!">
     </form>
-    
-<h1>Mostrar casilla:<%=@casillaDesbloqueada%></h1>
-    <table border="1"  WIDTH="500" HEIGHT="500" BGCOLOR="">
-      <caption>Ejemplo de tabla</caption>
-      <tbody>
-      <tr>
-          <th BGCOLOR="#FFFFFF"> </th>
-          <th BGCOLOR="#FFFFFF">1</th>
-          <th BGCOLOR="#FFFFFF">2</th>
-          <th BGCOLOR="#FFFFFF">3</th>
-          <th BGCOLOR="#FFFFFF">4</th>
-          <th BGCOLOR="#FFFFFF">5</th>
-          <th BGCOLOR="#FFFFFF">6</th>
-          <th BGCOLOR="#FFFFFF">7</th>
-          <th BGCOLOR="#FFFFFF">8</th>
-        </tr>
-        <tr>
-          <th BGCOLOR="#FFFFFF">1</th>
-          <th class="c1"><%=@casillas[0]%></th>
-          <th class="c2"><%=@casillas[1]%></th>
-          <th class="c3"><%=@casillas[2]%></th>
-          <th class="c4"><%=@casillas[3]%></th>
-          <th class="c5"><%=@casillas[4]%></th>
-          <th class="c6"><%=@casillas[5]%></th>
-          <th class="c7"><%=@casillas[6]%></th>
-          <th class="c8"><%=@casillas[7]%></th>
-        </tr>
-        <tr>
-          <th BGCOLOR="#FFFFFF">2</th>
-          <th class="c9"><%=@casillas[8]%></th>
-          <th class="c10"><%=@casillas[9]%></th>
-          <th class="c11"><%=@casillas[10]%></th>
-          <th class="c12"><%=@casillas[11]%></th>
-          <th class="c13"><%=@casillas[12]%></th>
-          <th class="c14"><%=@casillas[13]%></th>
-          <th class="c15"><%=@casillas[14]%></th>
-          <th class="c16"><%=@casillas[15]%></th>
-        </tr>
-        <tr>
-          <th BGCOLOR="#FFFFFF">3</th>
-          <th class="c17"><%=@casillas[16]%></th>
-          <th class="c18"><%=@casillas[17]%></th>
-          <th class="c19"><%=@casillas[18]%></th>
-          <th class="c20"><%=@casillas[19]%></th>
-          <th class="c21"><%=@casillas[20]%></th>
-          <th class="c22"><%=@casillas[21]%></th>
-          <th class="c23"><%=@casillas[22]%></th>
-          <th class="c24"><%=@casillas[23]%></th>
-        </tr>
-        <tr>
-          <th BGCOLOR="#FFFFFF">4</th>
-          <th class="c25"><%=@casillas[24]%></th>
-          <th class="c26"><%=@casillas[25]%></th>
-          <th class="c27"><%=@casillas[26]%></th>
-          <th class="c28"><%=@casillas[27]%></th>
-          <th class="c29"><%=@casillas[28]%></th>
-          <th class="c30"><%=@casillas[29]%></th>
-          <th class="c31"><%=@casillas[30]%></th>
-          <th class="c32"><%=@casillas[31]%></th>  
-        </tr>
-        <tr>
-          <th BGCOLOR="#FFFFFF">5</th>
-          <th class="c33"><%=@casillas[32]%></th>
-          <th class="c34"><%=@casillas[33]%></th>
-          <th class="c35"><%=@casillas[34]%></th>
-          <th class="c36"><%=@casillas[35]%></th>
-          <th class="c37"><%=@casillas[36]%></th>
-          <th class="c38"><%=@casillas[37]%></th>
-          <th class="c39"><%=@casillas[38]%></th>
-          <th class="c40"><%=@casillas[39]%></th>
-        </tr>
-        <tr>
-          <th BGCOLOR="#FFFFFF">6</th>
-          <th class="c41"><%=@casillas[40]%></th>
-          <th class="c42"><%=@casillas[41]%></th>
-          <th class="c43"><%=@casillas[42]%></th>
-          <th class="c44"><%=@casillas[43]%></th>
-          <th class="c45"><%=@casillas[44]%></th>
-          <th class="c46"><%=@casillas[45]%></th>
-          <th class="c47"><%=@casillas[46]%></th>
-          <th class="c48"><%=@casillas[47]%></th>
-        </tr>
-        <tr>
-          <th BGCOLOR="#FFFFFF">7</th>
-          <th class="c49"><%=@casillas[48]%></th>
-          <th class="c50"><%=@casillas[49]%></th>
-          <th class="c51"><%=@casillas[50]%></th>
-          <th class="c52"><%=@casillas[51]%></th>
-          <th class="c53"><%=@casillas[52]%></th>
-          <th class="c54"><%=@casillas[53]%></th>
-          <th class="c55"><%=@casillas[54]%></th>
-          <th class="c56"><%=@casillas[55]%></th>
-      </tr>
-      <tr>
-        <th BGCOLOR="#FFFFFF">8</th>
-        <th class="c57"><%=@casillas[56]%></th>
-        <th class="c58"><%=@casillas[57]%></th>
-        <th class="c59"><%=@casillas[58]%></th>
-        <th class="c60"><%=@casillas[59]%></th>
-        <th class="c61"><%=@casillas[60]%></th>
-        <th class="c62"><%=@casillas[61]%></th>
-        <th class="c63"><%=@casillas[62]%></th>
-        <th class="c64"><%=@casillas[63]%></th>
-      </tr>
-      </tbody>
-    </table>
+    MostrarTablero: <%=@tableroHTML%>
     <br>
     <br>
 
@@ -140,6 +35,6 @@
       <br> 
         <input type="submit" value="MarcarCasilla!">
     </form>
-   MostrarTablero: <%=@tableroHTML%>
+   
   </body>
 </html>
