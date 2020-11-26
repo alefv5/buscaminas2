@@ -42,12 +42,12 @@ RSpec.describe Buscamina do
      it 'Debería verificar la casilla para el cambio de color ' do
         @juego = Buscamina.new
         @juego.inicializarEstatico()
-        expect(@juego.verificarCasilla(2,2)).to eq(".c10")
+        expect(@juego.verificarCasilla(2,2)).to eq("c10")
      end
      it 'Debería verificar la casilla para el cambio de color ' do
         @juego = Buscamina.new
         @juego.inicializarEstatico()
-        expect(@juego.verificarCasilla(1,1)).to eq(".c1")
+        expect(@juego.verificarCasilla(1,1)).to eq("c1")
      end
      it 'deberia mostrar cadena de generarHTMLPersonalizado para X=2 y Y=2' do
       @juego = Buscamina.new
