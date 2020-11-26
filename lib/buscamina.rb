@@ -1,5 +1,5 @@
 class Buscamina
-    def inicializar()
+    def inicializarEstatico()
         @@filas=8
         @@columnas=8
         @@tablero=Array.new @@filas*@@columnas 
@@ -13,26 +13,66 @@ class Buscamina
                     "*"," ","*"," ","1"," "," ","1"] #array empieza en 1 y acaba en 64
                     @@casillasDesbloqueadas=".c"
     end
-    def generarHTML(x,y)
-        #@@tablero2 = Array.new @@filas*@@columnas
     
+    def inicializarRandomEstatico()
+        @@tableroRandom=Array.new(@@filas*@@columnas ){rand(1...5).to_s} 
+        #puts @@tableroRandom
+    end
+    def inicializarRandomPersonalizado(x,y)
+        @@tableroRandom=Array.new(x*y){rand(1...5).to_s} 
+        #puts @@tableroRandom
+    end
+    
+    def generarHTMLPersonalizado(x,y)
         cadena_Html ="<table border=""1"" WIDTH=""500"" HEIGHT=""500"">"
         cadena_HtmlFin="</table>"
-        for i in(1..y)
-            cadena_Html=cadena_Html+"<tr>"
-            for j in(1..x)
-                cadena_Html=cadena_Html+"<th>"
-                cadena_Html=cadena_Html+"</th>"
+            for i in(1..y)
+                cadena_Html=cadena_Html+"<tr>"
+                for j in(1..x)
+                    cadena_Html=cadena_Html+"<th>"
+                    cadena_Html=cadena_Html+"</th>"
+                end
+                cadena_Html=cadena_Html+"</tr>"
             end
-            cadena_Html=cadena_Html+"</tr>"
+                return cadena_Html=cadena_Html+cadena_HtmlFin
         end
-        
+    def generarHTMLEstatico()
+            cadena_Html ="<table border=""1"" WIDTH=""500"" HEIGHT=""500"">"
+            cadena_HtmlFin="</table>"
+            for i in(1..8)
+                cadena_Html=cadena_Html+"<tr>"
+                for j in(1..8)
+                    cadena_Html=cadena_Html+"<th>"
+                    cadena_Html=cadena_Html+"</th>"
+                end
+                cadena_Html=cadena_Html+"</tr>"
+            end
        return cadena_Html=cadena_Html+cadena_HtmlFin
     end
 
-    #def generarHTML()
-     #   return "<table border=""1""><tr><th></th><th></th></tr></table>"
-    #end
+    
+
+    def verificarCasilla(x,y)
+        posicion=coordenadaAposicion(x,y)
+        @@tablero[posicion-1] = 0
+        @@casillasDesbloqueadas =+ ".c"+posicion.to_s
+        #puts @@casillasDesbloqueadas
+     return @@casillasDesbloqueadas
+    end 
+    def coordenadaAposicion(x,y) #0 0 no da devuelve negativo 2 2 - 9 arreglo desde 0  2 1
+        y=y-1 
+        posicion=(y*@@filas+x)
+        return posicion
+    end
+    def getCasillaDeTablero(x,y)
+       return @@tablero[coordenadaAposicion(x,y)-1]
+    end
+    def getTableroEstatico()
+        return @@tablero
+    end
+    def getTableroRandomPersonalizado()
+        return @@tableroRandom
+    end
     def getNombre()
         return @nombre
     end
@@ -49,26 +89,4 @@ class Buscamina
     def setNombre(nombre)
         @nombre = nombre
     end
-
-    def verificarCasilla(x,y)
-        posicion=coordenadaAposicion(x,y)
-        @@tablero[posicion-1] = 0
-        @@casillasDesbloqueadas =+ ".c"+posicion.to_s
-        puts @@casillasDesbloqueadas
-     return @@casillasDesbloqueadas
-    end 
-    def coordenadaAposicion(x,y) #0 0 no da devuelve negativo 2 2 - 9 arreglo desde 0  2 1
-        
-        y=y-1 
-        posicion=(y*@@filas+x)
-        return posicion
-    end
-    def getCasillaDeTablero(x,y)
-       return @@tablero[coordenadaAposicion(x,y)-1]
-    end
-    def getTablero()
-        return @@tablero
-    end
-   
-
 end

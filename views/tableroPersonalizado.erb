@@ -2,31 +2,21 @@
   <body>
   <head>
   <style>
-  #css
-  <%=@casillaDesbloqueada%>{
-    background :gray;
-    color: white;
-  }
-
+  
   </style>
- <script>
- function CambioColor(num) {
-   document.getElementById(num).style.background="grey";
- }
- </script>
   </head>
   <body>
     <h1>JUGADOR: <%=@@namePlayer%></h1>
-   
-    <form method="get" action="/reiniciar" >
+    <form method="get" action="/ReiniciarPersonalizado" >
    <input type="submit" value="Reiniciar!">
+   
     </form>
     MostrarTablero: <%=@tableroHTML%>
     <br>
     <br>
 
     <br>
-    <form action="/elegirCasillas" >
+    <form action="/ElegirCasillaPersonalizado" >
     
       <h4>X:</h4>  <input type="number" size="6" name="coord_x" id="coord_x">  
 

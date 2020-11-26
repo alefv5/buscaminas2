@@ -1,0 +1,28 @@
+<html>
+  <body>
+  <head>
+  <style>
+  
+  </style>
+  </head>
+  <body>
+    <h1>JUGADOR: <%=@@namePlayer%></h1>
+    <form method="get" action="/ReiniciarEstatico" >
+   <input type="submit" value="Reiniciar!">
+    </form>
+    MostrarTablero: <%=@tableroHTML%>
+    <br>
+
+    <br>
+    <form action="/ElegirCasillaEstatico" >
+    
+      <h4>X:</h4>  <input type="number" size="6" name="coord_x" id="coord_x">  
+
+      <h4>Y:</h4>  <input type="number" size="6" name="coord_y" id="coord_y" > 
+      <br>
+      <br> 
+        <input type="submit" value="MarcarCasilla!">
+    </form>
+   
+  </body>
+</html>
