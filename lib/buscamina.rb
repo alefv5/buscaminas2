@@ -19,7 +19,7 @@ class Buscamina
         #puts @@tableroRandom
     end
     def inicializarRandomPersonalizado(x,y)
-        @@tableroRandom=Array.new(x*y+1){rand(1...6).to_s} 
+        @@tableroRandom=Array.new(x*y){rand(1...6).to_s} 
         #puts @@tableroRandom
     end
     
@@ -29,7 +29,7 @@ class Buscamina
             for i in(1..y)
                 cadena_Html=cadena_Html+"<tr>"
                 for j in(1..x)
-                    cadena_Html=cadena_Html+"<th>"+@@tableroRandom[i*j].to_s
+                    cadena_Html=cadena_Html+"<th>"+@@tablero[i*j].to_s
                     cadena_Html=cadena_Html+"</th>"
                 end
                 cadena_Html=cadena_Html+"</tr>"
