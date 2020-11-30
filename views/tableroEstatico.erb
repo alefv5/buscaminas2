@@ -18,9 +18,11 @@
     var b = document.getElementById('coord_y').value;
     var x = parseInt(a);
     var y = parseInt(b);
+
     filaArray= y*fila-7;
     columArray=filaArray+(x-1);
     pos=columArray-1;
+    
     actual_value = document.getElementById(pos).textContent;
     document.getElementById(pos).style.color="black";
     console.log(actual_value);

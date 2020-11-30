@@ -3,8 +3,8 @@ require './lib/buscamina'
 buscaminasTablero=Buscamina.new
 get '/' do
     @@namePlayer=params[:namePlayer]
-    buscaminasTablero.inicializarEstatico()
-    @casillas=buscaminasTablero.getTableroEstatico()
+    #buscaminasTablero.inicializarEstatico()
+    #buscaminasTablero.inicializarRandomPersonalizado()
     erb :home
 end 
 get '/Menu' do
@@ -14,13 +14,12 @@ end
 get '/IniciarJuegoPersonalizado' do    
     @@tamX=params[:tam_x]
     @@tamY=params[:tam_y]
-     @casillas=buscaminasTablero.getTableroRandomPersonalizado()
      buscaminasTablero.inicializarRandomPersonalizado(@@tamX.to_i,@@tamY.to_i)
      @tableroHTML=buscaminasTablero.generarHTMLPersonalizado(@@tamX.to_i,@@tamY.to_i)
      erb :tableroPersonalizado
 end
 get '/IniciarJuegoEstatico' do
-     @casillas=buscaminasTablero.getTableroEstatico()
+    
      buscaminasTablero.inicializarEstatico()
     @tableroHTML=buscaminasTablero.generarHTMLEstatico()
      erb :tableroEstatico
@@ -28,7 +27,6 @@ end
 get '/ElegirCasillaEstatico' do
     coordX=params[:coord_x]
     coordY=params[:coord_y]
-    @casillas=buscaminasTablero.getTableroEstatico()
     @tableroHTML=buscaminasTablero.generarHTMLEstatico()
     erb :tableroEstatico
 

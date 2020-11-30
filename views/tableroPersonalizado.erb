@@ -18,10 +18,12 @@
     var b = document.getElementById('coord_y').value;
     var x = parseInt(a); 
     var y = parseInt(b); 
-    filaArray= y*fila-x; 
+    res= fila-1;
+    filaArray= y*fila-res;
     columArray=filaArray+(x-1);
     pos=columArray-1;
-    var actual_value = document.getElementById(pos).textContent;
+
+    actual_value = document.getElementById(pos).textContent;
     document.getElementById(pos).style.color="black";
     console.log(actual_value);
     console.log(pos);
@@ -46,7 +48,7 @@
       <h4>X:</h4>  <input type="text" size="6" name="coord_x" Placeholder="Posicion X"id="coord_x">  
 
       <h4>Y:</h4>  <input type="text" size="6" name="coord_y" Placeholder="Posicion Y"id="coord_y">  
-      <button type="submit" value="Abrir" id="ABP" onclick="return cambiarOcultoPorValorP(8)">Abrir Casilla</button>
+      <button type="submit" value="Abrir" id="ABP" onclick="return cambiarOcultoPorValorP(<%=@@tamX%>)">Abrir Casilla</button>
       <br>
       <br> 
     </form>
