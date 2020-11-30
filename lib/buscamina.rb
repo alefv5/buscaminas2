@@ -23,6 +23,8 @@ class Buscamina
         " "," "," "," ","1","2","3"," ",
         "1","2","1","1","1","*","*"," ",
         "*"," ","*"," ","1"," "," ","1"]
+        @@tableroRandom=Array.new(x*y){rand(1...6).to_s} 
+        #puts @@tableroRandom
     end
     
     def generarHTMLPersonalizado(x,y)
@@ -35,6 +37,8 @@ class Buscamina
                     cadena_Html=cadena_Html+"<td><label id="+numero.to_s + ">"+ (@@tableroRandom[numero]).to_s + "</label>"
                     numero=numero+1
                     cadena_Html=cadena_Html+"</td>"
+                    cadena_Html=cadena_Html+"<th>"+@@tablero[i*j].to_s
+                    cadena_Html=cadena_Html+"</th>"
                 end
                 cadena_Html=cadena_Html+"</tr>"
             end

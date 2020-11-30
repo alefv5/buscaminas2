@@ -39,6 +39,7 @@ RSpec.describe Buscamina do
                                                    "1","2","1","1","1","*","*"," ",
                                                    "*"," ","*"," ","1"," "," ","1"])
      end
+<<<<<<< HEAD
 
      it 'deberia mostrar tamaño cadena de generarHTMLPersonalizado para X=4 y Y=4' do
       @juego = Buscamina.new
@@ -48,6 +49,26 @@ RSpec.describe Buscamina do
          @juego = Buscamina.new
          expect(@juego.getHTMLtamañoPersonalizado(4,8)).to eq(32)
          end
+=======
+     it 'Debería verificar la casilla para el cambio de color ' do
+        @juego = Buscamina.new
+        @juego.inicializarEstatico()
+        expect(@juego.verificarCasilla(2,2)).to eq(10)
+     end
+     it 'Debería verificar la casilla para el cambio de color ' do
+        @juego = Buscamina.new
+        @juego.inicializarEstatico()
+        expect(@juego.verificarCasilla(1,1)).to eq(1)
+     end
+     #it 'deberia mostrar cadena de generarHTMLPersonalizado para X=2 y Y=2' do
+     #@juego = Buscamina.new
+      #expect(@juego.generarHTMLPersonalizado(2,2)).to eq("<table border=""1"" WIDTH=""500"" HEIGHT=""500""><tr><th></th><th></th></tr><tr><th></th><th></th></tr></table>")
+     # end
+     # it 'deberia mostrar cadena de generarHTMLPersonalizado para X=4 y Y=2' do
+        # @juego = Buscamina.new
+         #expect(@juego.generarHTMLPersonalizado(4,2)).to eq("<table border=""1"" WIDTH=""500"" HEIGHT=""500""><tr><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th></tr></table>")
+         #end
+>>>>>>> df5f4205cd01dc8305ed80d29b5f6ff07eae7075
      it 'Set tamaño array 5x5' do
          @juego = Buscamina.new
          @juego.setTamañoArray(5,5)
