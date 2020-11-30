@@ -2,8 +2,33 @@
   <body>
   <head>
   <style>
-  
+  td{
+    color:transparent;
+   }
+   label{
+    color:transparent;
+   } 
   </style>
+  <script>
+  function limpiarFormularioXyY() {
+    document.getElementById("form1").reset();
+  }
+  function cambiarOcultoPorValorP(fila){
+    var a = document.getElementById('coord_x').value;
+    var b = document.getElementById('coord_y').value;
+    var x = parseInt(a); 
+    var y = parseInt(b); 
+    filaArray= y*fila-x; 
+    columArray=filaArray+(x-1);
+    pos=columArray-1;
+    var actual_value = document.getElementById(pos).textContent;
+    document.getElementById(pos).style.color="black";
+    console.log(actual_value);
+    console.log(pos);
+    limpiarFormularioXyY();
+    return false;
+  }
+  </script> 
   </head>
   <body>
     <h1>JUGADOR: <%=@@namePlayer%></h1>
@@ -16,14 +41,14 @@
     <br>
 
     <br>
-    <form action="/ElegirCasillaPersonalizado" >
+    <form action="/ElegirCasillaPersonalizado" id= "form1" >
     
-      <h4>X:</h4>  <input type="number" size="6" name="coord_x" id="coord_x">  
+      <h4>X:</h4>  <input type="text" size="6" name="coord_x" Placeholder="Posicion X"id="coord_x">  
 
-      <h4>Y:</h4>  <input type="number" size="6" name="coord_y" id="coord_y" > 
+      <h4>Y:</h4>  <input type="text" size="6" name="coord_y" Placeholder="Posicion Y"id="coord_y">  
+      <button type="submit" value="Abrir" id="ABP" onclick="return cambiarOcultoPorValorP(8)">Abrir Casilla</button>
       <br>
       <br> 
-        <input type="submit" value="MarcarCasilla!">
     </form>
    
   </body>
