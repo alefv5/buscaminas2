@@ -10,9 +10,13 @@
    } 
   </style>
   <script>
+  var miArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
   function limpiarFormularioXyY() {
     document.getElementById("form").reset();
+    console.log(miArray);
   }
+
   function cambiarOcultoPorValor(fila){
     var a = document.getElementById('coord_x').value;
     var b = document.getElementById('coord_y').value;
@@ -22,21 +26,85 @@
     filaArray= y*fila-7;
     columArray=filaArray+(x-1);
     pos=columArray-1;
+    if(miArray[pos]==0){
+      actual_value = document.getElementById(pos).textContent;
+      document.getElementById(pos)
+      document.getElementById(pos).style.color="black";
+      console.log(actual_value);
+      console.log(pos);
+      limpiarFormularioXyY();
+      miArray[pos]=1;
+    }else{
+         if(miArray[pos]==1){
+           alert("numero abierto");
+          }
+        else{
+          if(miArray[pos]==2){
+             alert("existe bandera");
+           }
+         } 
+        }
+    return false;
+  }
     
+function ponerBandera(fila){
+  var a = document.getElementById('coord_x').value;
+  var b = document.getElementById('coord_y').value;
+  var x = parseInt(a);
+  var y = parseInt(b);
+
+  filaArray= y*fila-7;
+  columArray=filaArray+(x-1);
+  pos=columArray-1;
+  if(miArray[pos]==0){
     actual_value = document.getElementById(pos).textContent;
-    document.getElementById(pos).style.color="black";
+    document.getElementById(pos).style.background="black";
     console.log(actual_value);
     console.log(pos);
     limpiarFormularioXyY();
-    return false;
+    miArray[pos]=2;
 }
+else{
+         if(miArray[pos]==1){
+           alert("numero abierto");
+          }
+        else{
+          if(miArray[pos]==2){
+             alert("existe bandera");
+           }
+         } 
+      }
+  return false;
+}
+function eliminarBandera(fila)
+{
+  var a = document.getElementById('coord_x').value;
+  var b = document.getElementById('coord_y').value;
+  var x = parseInt(a);
+  var y = parseInt(b);
+
+  filaArray= y*fila-7;
+  columArray=filaArray+(x-1);
+  pos=columArray-1;
+  if(miArray[pos]==2){
+    actual_value = document.getElementById(pos).textContent;
+    document.getElementById(pos).style.background="transparent";
+    console.log(actual_value);
+    console.log(pos);
+    limpiarFormularioXyY();
+    miArray[pos]=0;
+ }
+ limpiarFormularioXyY();
+  return false;
+}
+
   </script> 
 
   </head>
   <body>
     <h1>JUGADOR: <%=@@namePlayer%></h1>
     <form method="get" action="/ReiniciarEstatico" >
-   <input type="submit" value="Reiniciar!">
+   <input type="submit" value="iniciar juego!">
     </form>
     MostrarTablero: <%=@tableroHTML%>
     <br>
@@ -44,10 +112,14 @@
     <br>
     <form action="/ElegirCasillaEstatico" id= "form" >
     
-      <h4>X:</h4>  <input type="text" size="6" name="coord_x" Placeholder="Posicion X"id="coord_x">  
+      <h4>X:</h4>  <input type="text" size="6" name="coord_x" Placeholder="Posicion X"id="coord_x" required>  
 
-      <h4>Y:</h4>  <input type="text" size="6" name="coord_y" Placeholder="Posicion Y"id="coord_y">  
+      <h4>Y:</h4>  <input type="text" size="6" name="coord_y" Placeholder="Posicion Y"id="coord_y" required>  
       <button type="submit" value="Abrir" id="AB" onclick="return cambiarOcultoPorValor(8)">Abrir Casilla</button>
+
+      <button type="submit" value="Abrir1" id="AB1" onclick="return ponerBandera(8)">Poner bandera</button>
+
+      <button type="submit" value="Abrir2" id="AB2" onclick="return eliminarBandera(8)">Eliminar bandera</button>
       <br>
       <br> 
     </form>

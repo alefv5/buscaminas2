@@ -3,20 +3,18 @@ class Buscamina
         @@filas=8
         @@columnas=8
         @@tablero=Array.new @@filas*@@columnas 
-        @@tablero = [" ","*","2"," ","*","1"," "," ",
-                     " ","*","2","1","1","1"," "," ",
-                     "3"," ","2"," "," "," "," "," ",
-                     "*","*","1"," "," "," ","1","1",
-                     "2","2","1"," "," "," ","1","*",
-                     " "," "," "," ","1","2","3"," ",
-                     "1","2","1","1","1","*","*"," ",
-                     "*"," ","*"," ","1"," "," ","1"] #array empieza en 1 y acaba en 64
+        @@tablero = ["-","*","2"," ","*","1","-","-",
+                     "-","*","2","1","1","1","-","-",
+                     "3","-","2","-","-","-","-","-",
+                     "*","*","1","-","-","-","1","1",
+                     "2","2","1","-","-","-","1","*",
+                     " ","-"," ","-","1","2","3","-",
+                     "1","2","1","1","1","*","*","-",
+                     "*","-","*","-","1","-","-","1"] #array empieza en 1 y acaba en 64
     end
 
     def inicializarRandomPersonalizado(x,y)
-        #@@tableroRandom=Array.new (x*y)
         @@tableroRandom=Array.new(x*y){rand(1...6).to_s} 
-        #puts @@tableroRandom
     end
     
     def generarHTMLPersonalizado(x,y)
@@ -74,6 +72,11 @@ class Buscamina
     def getTableroRandomPersonalizado()
         return @@tableroRandom
     end
-
+    def setNombre(name)
+        @nombre=name
+    end
+    def getNombre()
+        return @nombre
+    end
     
 end

@@ -20,9 +20,9 @@ get '/IniciarJuegoPersonalizado' do
 end
 get '/IniciarJuegoEstatico' do
     
-     buscaminasTablero.inicializarEstatico()
+    buscaminasTablero.inicializarEstatico()
     @tableroHTML=buscaminasTablero.generarHTMLEstatico()
-     erb :tableroEstatico
+    erb :tableroEstatico
 end
 get '/ElegirCasillaEstatico' do
     coordX=params[:coord_x]
