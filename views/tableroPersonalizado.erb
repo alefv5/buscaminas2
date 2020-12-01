@@ -11,12 +11,34 @@
   </style>
   <script>
   var miArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-
+  var attemps =0;
   function limpiarFormularioXyY() {
     document.getElementById("form1").reset();
-    console.log(miArray);
+    //console.log(miArray);
   }
-
+  function ganar()
+  {
+    actual_value = document.getElementById(pos).textContent;
+    if(actual_value != "*")
+      {
+        attemps=attemps+1;
+        console.log(actual_value);
+         if(attemps==13){
+           alert("Gano");
+         }
+      }
+      
+  }
+  function perder(pos)
+  {
+    actual_value = document.getElementById(pos).textContent;
+    if(pos == "*")
+      {
+        alert("Perdio");
+        document.getElementById("form-Reiniciar2").submit();
+      }
+      
+  }
   function cambiarOcultoPorValor(fila){
     var a = document.getElementById('coord_x').value;
     var b = document.getElementById('coord_y').value;
@@ -29,7 +51,6 @@
 
     if(miArray[pos]==0){
       actual_value = document.getElementById(pos).textContent;
-      document.getElementById(pos)
       document.getElementById(pos).style.color="black";
       console.log(actual_value);
       console.log(pos);
@@ -49,7 +70,11 @@
            }
          } 
         }
+        perder(pos);
+        ganar(pos);
     return false;
+    
+    //ganar();
   }
     
 function ponerBandera(fila){
@@ -109,13 +134,13 @@ function eliminarBandera(fila)
     
  }
  limpiarFormularioXyY();
-  return false;
+return false;
 }
   </script> 
   </head>
   <body>
     <h1>JUGADOR: <%=@@namePlayer%></h1>
-    <form method="get" action="/ReiniciarPersonalizado" >
+    <form method="get" action="/ReiniciarPersonalizado" id="form-Reiniciar2">
    <input type="submit" value="Reiniciar!">
    
     </form>

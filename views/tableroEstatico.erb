@@ -11,6 +11,29 @@
   </style>
   <script>
   var miArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+  var attemps =0;
+  function perder(pos)
+  {
+    actual_value = document.getElementById(pos).textContent;
+    if(actual_value == "*")
+      {
+        alert("Perdio");
+        document.getElementById("form-Reiniciar").submit();
+      }
+      
+  }
+  function ganar()
+  {
+    actual_value = document.getElementById(pos).textContent;
+    if(actual_value != "*")
+      {
+        attemps=attemps+1;
+         if(attemps==53){
+           alert("Gano");
+         }
+      }
+      
+  }
 
   function limpiarFormularioXyY() {
     document.getElementById("form").reset();
@@ -18,17 +41,18 @@
   }
 
   function cambiarOcultoPorValor(fila){
+    
     var a = document.getElementById('coord_x').value;
     var b = document.getElementById('coord_y').value;
     var x = parseInt(a);
     var y = parseInt(b);
-
-    filaArray= y*fila-7;
+//2*2
+    filaArray= y*fila-7;//2*8-7;9+1;10-1
     columArray=filaArray+(x-1);
     pos=columArray-1;
     if(miArray[pos]==0){
       actual_value = document.getElementById(pos).textContent;
-      document.getElementById(pos)
+      
       document.getElementById(pos).style.color="black";
       console.log(actual_value);
       console.log(pos);
@@ -37,13 +61,18 @@
     }else{
          if(miArray[pos]==1){
            alert("numero abierto");
+           limpiarFormularioXyY();
+
           }
         else{
           if(miArray[pos]==2){
              alert("existe bandera");
+             limpiarFormularioXyY();
            }
          } 
         }
+        perder(pos);
+        ganar(pos);
     return false;
   }
     
@@ -103,7 +132,7 @@ function eliminarBandera(fila)
   </head>
   <body>
     <h1>JUGADOR: <%=@@namePlayer%></h1>
-    <form method="get" action="/ReiniciarEstatico" >
+    <form method="get" action="/ReiniciarEstatico" id="form-Reiniciar" >
    <input type="submit" value="iniciar juego!">
     </form>
     MostrarTablero: <%=@tableroHTML%>

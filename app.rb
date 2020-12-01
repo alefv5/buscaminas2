@@ -44,6 +44,8 @@ get '/ReiniciarEstatico' do
 end
 
 get '/ReiniciarPersonalizado' do
+    buscaminasTablero.inicializarEstatico()
+    buscaminasTablero.getTableroEstatico()
     @tableroHTML=buscaminasTablero.generarHTMLPersonalizado(@@tamX.to_i,@@tamY.to_i)
     erb :tableroPersonalizado
 end
